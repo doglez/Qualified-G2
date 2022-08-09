@@ -1,0 +1,12 @@
+{
+    "user": {
+        "name": "James",
+        "_id": "62eb3459a48ea33b295e9b80"
+    },
+    "album": {
+        "performer": "Unknown",
+        "title": "Sample",
+        "cost": 2,
+        "_id": "62eb3459a48ea33b295e9b7e"
+    }
+}

@@ -1,0 +1,41 @@
+import React, { useState } from "react";
+import InputElement from "./InputElement.jsx";
+
+const DynamicInput = () => {
+    const [inputsContent, setInputsContent] = useState([]);
+    const [positionValue, setPositionValue] = useState(0);
+
+    const addInputElement = () => {
+        setPositionValue(positionValue + 1);
+        setInputsContent([
+            ...inputsContent,
+            {
+                id: positionValue,
+                text: "",
+            },
+        ]);
+    };
+
+    const removeInputElement = (index) => {
+        setInputsContent(inputsContent.filter((item) => item.id !== index));
+    };
+
+    return (
+        <>
+            <button data-testid="add-row" onClick={addInputElement}>
+                +
+            </button>
+            {inputsContent.map((inputContent, index) => (
+                <InputElement
+                    key={inputContent.id}
+                    inputContent={inputContent}
+                    removeInputElement={removeInputElement}
+                    inputsContent={inputsContent}
+                    index={index}
+                />
+            ))}
+        </>
+    );
+};
+
+export default DynamicInput;

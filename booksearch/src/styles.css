@@ -1,0 +1,47 @@
+* {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 10pt;
+}
+
+#app {
+    margin: 1em;
+}
+
+.search-box {
+    margin-bottom: 1em;
+    width: 215px;
+}
+
+.search-box label {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    box-sizing: border-box;
+    margin-left: auto;
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book {
+    margin-right: 1em;
+    margin-bottom: 1em;
+    padding-right: 1em;
+    width: 180px;
+}
+
+.book-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-detail-key {
+    margin-right: 1em;
+    font-size: 9pt;
+    color: #333;
+}

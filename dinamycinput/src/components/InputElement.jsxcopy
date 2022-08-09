@@ -1,0 +1,54 @@
+import React, { useEffect, useState } from "react";
+
+const InputElement = (props) => {
+    const [valueInput, setValueInput] = useState();
+    const { inputContent, removeInputElement, inputsContent, index } = props;
+
+    const hanldeInput = (e) => {
+        inputsContent[index] = {
+            id: inputContent.id,
+            text: e.target.value,
+        };
+    };
+
+    const upInput = (e) => {
+        inputsContent[index] = {
+            id: inputContent.id - 1,
+            text: e.target.value,
+        };
+    };
+
+    const downInput = (e) => {
+        inputsContent[index] = {
+            id: inputContent.id + 1,
+            text: e.target.value,
+        };
+    };
+
+    const removeInput = () => {
+        removeInputElement(inputContent.id);
+    };
+
+    return (
+        <div>
+            <input
+                id={inputContent.id}
+                autoFocus
+                data-testid="row-input"
+                value={valueInput}
+                onChange={hanldeInput}
+            />
+            <button data-testid="row-down" onClick={upInput}>
+                Up
+            </button>
+            <button data-testid="row-up" onClick={downInput}>
+                Down
+            </button>
+            <button data-testid="row-delete" onClick={removeInput}>
+                x
+            </button>
+        </div>
+    );
+};
+
+export default InputElement;
